@@ -1,6 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
+var models = require('./models');
+
 var app = express();
 
 // Serve static content for the app from the "public" directory in the application directory.
@@ -24,7 +26,7 @@ var routes = require('./controllers/burgers_controller.js');
 
 app.use('/', routes);
 app.use('/update', routes);
-app.use('/create', routes);
+app.use('/create', routes); //update and create still needed..
 
 var port = process.env.PORT || 3000;
 app.listen(port);
